@@ -8,13 +8,15 @@ export default auth((req) => {
   // req.auth
   const authenticated = req.auth?.user
 
+  if(req.nextUrl.pathname === '/' ){
+    return null
+  }
+
   if(!authenticated){
     return NextResponse.rewrite(new URL('/', req.url))
   }
   const authRoutes = ['/api/auth']
-  if(req.nextUrl.pathname.startsWith('/')){
-    return null
-  }
+
   if(req.nextUrl.pathname.startsWith(authRoutes[0])){
     return null
   }
