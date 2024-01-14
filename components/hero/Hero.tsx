@@ -20,7 +20,7 @@ const Hero = () => {
             <SignInbutton label="Sign Up For Free" padding="p-6" />
           </div>
         </div>
-        <div className="relative w-full md:w-[40rem] h-[25rem] md:h-[35rem]">
+        <div className="relative w-[90%] md:w-[40rem] h-[20rem] md:h-[35rem]">
           <Image
             className="object-contain"
             src={heroImage}
