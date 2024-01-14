@@ -11,14 +11,15 @@ export default auth((req) => {
   if(req.nextUrl.pathname === '/' ){
     return null
   }
-
-  if(!authenticated){
-    return NextResponse.rewrite(new URL('/', req.url))
-  }
+  
   const authRoutes = ['/api/auth']
 
   if(req.nextUrl.pathname.startsWith(authRoutes[0])){
     return null
+  }
+
+  if(!authenticated){
+    return NextResponse.rewrite(new URL('/', req.url))
   }
 })
 
