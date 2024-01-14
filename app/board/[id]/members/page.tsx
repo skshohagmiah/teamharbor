@@ -55,7 +55,14 @@ const membersPage = async ({ params }: { params: { id: string } }) => {
             />
             <p className="text-lg">{member.user.name}</p>
             <p className="hidden md:block">{member.user.email}</p>
-            <p>{member.role}</p>
+            <p
+              className={cn(
+                "text-green-500",
+                member.role === "admin" && "text-red-500 font-semibold"
+              )}
+            >
+              {member.role}
+            </p>
             {member.role !== "admin" && (
               <form
                 action={deleteMember}

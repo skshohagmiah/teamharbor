@@ -16,7 +16,7 @@ const SignOutButton = ({ label }: SignOutButtonProps) => {
       variant="outline"
       onClick={() => signOut({ callbackUrl: "/", redirect: true })}
       className={cn(
-        "flex gap-2 px-6 mx-auto text-lg w-full md:mx-0 hover:opacity-50 transition"
+        "flex gap-2 justify-start px-6 mx-auto text-lg w-full md:mx-0 hover:opacity-50 transition"
       )}
       size="sm"
     >

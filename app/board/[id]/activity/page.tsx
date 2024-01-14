@@ -24,14 +24,15 @@ const ActivityPage = async ({ params }: { params: { id: string } }) => {
         {activities.map((activity) => (
           <div
             key={activity.id}
-            className="bg-slate-300 flex flex-wrap md:gap-4 items-center justify-center rounded-sm"
+            className="bg-slate-300 flex flex-wrap md:gap-4 items-center justify-start md:pl-4 rounded-sm"
           >
-            <div className=" p-2 ">
-              <p className="text-lg md:text-xl font-medium capitalize">
+            <div className="p-1">
+              <p className="text-md font-medium capitalize -mb-1">
                 {activity.content} / By
               </p>
               <small>Date: {activity.createdAt.toString().slice(0, 16)}</small>
             </div>
+
             <div className="flex items-center justify-between gap-2">
               <Image
                 src={activity.user.image || ""}

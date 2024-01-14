@@ -38,4 +38,4 @@ TeamHarbor is a robust project management application built with cutting-edge te
 
 TeamHarbor stands as a testament of my skills in developing advanced and feature-rich applications. The combination of modern technologies, intuitive user experience, and collaborative features make it a standout project management solution. Feel free to explore the live demo or dive into the codebase to witness firsthand the innovation and craftsmanship behind TeamHarbor.
 
-[Live Demo](#) | [GitHub Repository](#)
+[Live Demo](https://teamharbor.vercel.app/) | [GitHub Repository](#)

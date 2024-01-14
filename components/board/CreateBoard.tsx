@@ -4,7 +4,7 @@ import CreateBoardModal from "../modal/CreateBoardModal";
 import { useCreateBoardModal } from "@/hooks/useCreateBoardModal";
 
 const CreateBoard = () => {
-  const { isOpen, onClose, onOpen } = useCreateBoardModal();
+  const { onOpen } = useCreateBoardModal();
 
   useEffect(() => {
     onOpen();
