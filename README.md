@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TeamHarbor - A Next.js Project Management Application
 
-## Getting Started
+## Overview
 
-First, run the development server:
+TeamHarbor is a robust project management application built with cutting-edge technologies, offering a seamless experience for collaborative project planning and execution. Leveraging the power of Next.js 14, Server Actions, TypeScript, Tailwind CSS, Chadcn UI, Prisma, MongoDB, and Next-Auth for authentication, TeamHarbor provides a modern and efficient platform for teams to manage their work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Board Creation and Management:** Users can effortlessly create boards, providing a centralized space for project organization.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Lists and Cards:** Within each board, users can create lists and populate them with cards, facilitating detailed task breakdowns.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Copy and Delete Functionality:** TeamHarbor allows users to duplicate or remove boards and lists with cards, streamlining project management.
 
-## Learn More
+- **Activity Logs:** The application keeps track of user activities, providing a comprehensive log that board members can review to stay informed about changes and updates.
 
-To learn more about Next.js, take a look at the following resources:
+- **User Invitation and Management:** Users can invite others to join boards, fostering collaboration. Admin members have the authority to manage user roles, including the ability to delete members.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Drag-and-Drop Functionality:** TeamHarbor implements a smooth and intuitive drag-and-drop feature using the @/hello/pengue/dnd library, allowing users to rearrange boards, lists, and cards effortlessly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- **Next.js 14:** Utilized for building a fast and scalable frontend application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Server Actions:** Implemented to handle server-side logic and mutations, enhancing overall performance.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **TypeScript:** Providing static typing for improved code reliability and maintainability.
+
+- **Tailwind CSS:** A utility-first CSS framework used for designing a responsive and visually appealing user interface.
+
+- **Chadcn UI:** Integrated for UI components, ensuring a consistent and attractive design.
+
+- **Prisma and MongoDB:** Leveraged for efficient and reliable data storage and retrieval.
+
+- **Next-Auth:** Implemented for secure and seamless authentication functionality.
+
+## Conclusion
+
+TeamHarbor stands as a testament of my skills in developing advanced and feature-rich applications. The combination of modern technologies, intuitive user experience, and collaborative features make it a standout project management solution. Feel free to explore the live demo or dive into the codebase to witness firsthand the innovation and craftsmanship behind TeamHarbor.
+
+[Live Demo](#) | [GitHub Repository](#)

@@ -1,0 +1,108 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.String
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model User {
+  id            String     @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  email         String?    @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  activities    Activity[]
+  members       Member[]
+}
+
+model Member {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  role      String   @default("member")
+  boardId   String   @db.ObjectId
+  board     Board    @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Board {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  image      String
+  lists      List[]
+  members    Member[]
+  activities Activity[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+}
+
+model List {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  position  Int      @default(0)
+  cards     Card[]
+  boardId   String   @db.ObjectId
+  board     Board    @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Card {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  position  Int      @default(0)
+  listId    String   @db.ObjectId
+  list      List     @relation(fields: [listId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ActivityType {
+  CREARTE
+  UPDATE
+  DELETE
+}
+
+model Activity {
+  id        String       @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  type      ActivityType
+  boardId   String       @db.ObjectId
+  board     Board        @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  userId    String       @db.ObjectId
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+model InviteToken {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  token     String
+  boardId   String @db.ObjectId
+  expires   Int
+  updatedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+}
